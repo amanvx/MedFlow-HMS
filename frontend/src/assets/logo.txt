@@ -1,0 +1,4 @@
+# HMS Logo
+# Place your logo image here (logo.png or logo.svg)
+
+HMS - Hospital Management System

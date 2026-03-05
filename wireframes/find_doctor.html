@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Find Doctor - HMS</title>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #2c3e50;
+            color: white;
+            position: fixed;
+            width: 240px
+        }
+
+        .sidebar .nav-link {
+            color: #bdc3c7;
+            padding: 15px 20px;
+            border-bottom: 1px solid #34495e
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background-color: #34495e;
+            color: white
+        }
+
+        .main-content {
+            margin-left: 240px;
+            padding: 30px
+        }
+
+        .search-header {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px
+        }
+
+        .doctor-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-bottom: 20px
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
+        }
+
+        .doctor-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #e9ecef
+        }
+
+        .availability-badge {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            margin-right: 4px;
+            border-radius: 4px
+        }
+
+        .avail-yes {
+            background-color: #d4edda;
+            color: #155724
+        }
+
+        .avail-no {
+            background-color: #f8d7da;
+            color: #721c24
+        }
+
+        .filter-section {
+            border-right: 1px solid #dee2e6
+        }
+    </style>
+</head>
+
+<body>
+    <div class='sidebar d-flex flex-column'>
+        <div class='p-4'>
+            <h4>MediCare V2</h4>
+        </div>
+        <nav class='nav flex-column'><a href='#' class='nav-link'><i class='bi bi-house-door me-2'></i>Dashboard</a><a
+                href='#' class='nav-link active'><i class='bi bi-search me-2'></i>Find Doctor</a><a href='#'
+                class='nav-link'><i class='bi bi-calendar-check me-2'></i>My Appointments</a><a href='#'
+                class='nav-link'><i class='bi bi-history me-2'></i>History</a><a href='#' class='nav-link'><i
+                    class='bi bi-person me-2'></i>Profile</a></nav>
+    </div>
+    <div class='main-content'>
+        <div class='d-flex justify-content-between align-items-center mb-4'>
+            <h2>Find a Specialist</h2>
+            <div class='user-profile d-flex align-items-center'><span class='me-3'>Welcome, <strong>John
+                        Doe</strong></span><img src='https://via.placeholder.com/40' class='rounded-circle'
+                    alt='Profile'></div>
+        </div>
+        <div class='search-header'>
+            <div class='row g-3'>
+                <div class='col-md-5'><label class='form-label fw-bold'>Search</label>
+                    <div class='input-group'><span class='input-group-text bg-white'><i
+                                class='bi bi-search'></i></span><input type='text' class='form-control border-start-0'
+                            placeholder='Doctor name or specialization...'></div>
+                </div>
+                <div class='col-md-3'><label class='form-label fw-bold'>Specialization</label><select
+                        class='form-select'>
+                        <option selected>All Specializations</option>
+                        <option>Cardiology</option>
+                        <option>Neurology</option>
+                        <option>Pediatrics</option>
+                        <option>Orthopedics</option>
+                    </select></div>
+                <div class='col-md-4'><label class='form-label fw-bold'>Availability Next 7 Days</label>
+                    <div class='d-flex gap-2'><button class='btn btn-outline-primary btn-sm active'>Any
+                            Day</button><button class='btn btn-outline-primary btn-sm'>Today</button><button
+                            class='btn btn-outline-primary btn-sm'>Tomorrow</button><button
+                            class='btn btn-outline-primary btn-sm'>Weekend</button></div>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-12 mb-3'>
+                <p class='text-muted'>Showing 24 doctors available in the coming week</p>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='card doctor-card'>
+                    <div class='card-body'>
+                        <div class='d-flex align-items-center mb-3'><img src='https://via.placeholder.com/80'
+                                class='doctor-img me-3' alt='Dr.'>
+                            <div>
+                                <h5 class='card-title mb-0'>Dr. Sarah Jenkins</h5>
+                                <p class='text-primary mb-0'>Cardiologist</p><small class='text-muted'>12 Years
+                                    Experience</small>
+                            </div>
+                        </div>
+                        <div class='mb-3'>
+                            <h6>Weekly Availability:</h6>
+                            <div class='d-flex flex-wrap gap-1'><span
+                                    class='availability-badge avail-yes'>Mon</span><span
+                                    class='availability-badge avail-no'>Tue</span><span
+                                    class='availability-badge avail-yes'>Wed</span><span
+                                    class='availability-badge avail-yes'>Thu</span><span
+                                    class='availability-badge avail-no'>Fri</span><span
+                                    class='availability-badge avail-yes'>Sat</span></div>
+                        </div>
+                        <div class='d-grid'><button class='btn btn-primary'>Book Appointment</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='card doctor-card'>
+                    <div class='card-body'>
+                        <div class='d-flex align-items-center mb-3'><img src='https://via.placeholder.com/80'
+                                class='doctor-img me-3' alt='Dr.'>
+                            <div>
+                                <h5 class='card-title mb-0'>Dr. Michael Chen</h5>
+                                <p class='text-primary mb-0'>Neurologist</p><small class='text-muted'>8 Years
+                                    Experience</small>
+                            </div>
+                        </div>
+                        <div class='mb-3'>
+                            <h6>Weekly Availability:</h6>
+                            <div class='d-flex flex-wrap gap-1'><span
+                                    class='availability-badge avail-no'>Mon</span><span
+                                    class='availability-badge avail-yes'>Tue</span><span
+                                    class='availability-badge avail-no'>Wed</span><span
+                                    class='availability-badge avail-yes'>Thu</span><span
+                                    class='availability-badge avail-yes'>Fri</span><span
+                                    class='availability-badge avail-no'>Sat</span></div>
+                        </div>
+                        <div class='d-grid'><button class='btn btn-primary'>Book Appointment</button></div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-md-6 col-lg-4'>
+                <div class='card doctor-card'>
+                    <div class='card-body'>
+                        <div class='d-flex align-items-center mb-3'><img src='https://via.placeholder.com/80'
+                                class='doctor-img me-3' alt='Dr.'>
+                            <div>
+                                <h5 class='card-title mb-0'>Dr. Elena Rodriguez</h5>
+                                <p class='text-primary mb-0'>Pediatrician</p><small class='text-muted'>15 Years
+                                    Experience</small>
+                            </div>
+                        </div>
+                        <div class='mb-3'>
+                            <h6>Weekly Availability:</h6>
+                            <div class='d-flex flex-wrap gap-1'><span
+                                    class='availability-badge avail-yes'>Mon</span><span
+                                    class='availability-badge avail-yes'>Tue</span><span
+                                    class='availability-badge avail-yes'>Wed</span><span
+                                    class='availability-badge avail-yes'>Thu</span><span
+                                    class='availability-badge avail-yes'>Fri</span><span
+                                    class='availability-badge avail-no'>Sat</span></div>
+                        </div>
+                        <div class='d-grid'><button class='btn btn-primary'>Book Appointment</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css'>
+</body>
+
+</html>
