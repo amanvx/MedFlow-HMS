@@ -220,24 +220,3 @@ npm run build
 # Serve with Flask static server (optional)
 python server.py
 ```
-
-### Docker (recommended)
-
-A `Dockerfile` and `docker-compose.yml` can be added for containerised deployment.
-
----
-
-## Contributing
-
-Pull requests are welcome. Please open an issue first to discuss major changes.
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Commit your changes: `git commit -m 'feat: add my feature'`
-4. Push and open a pull request
-
----
-
-## License
-
-This project is licensed under the **MIT License**.
