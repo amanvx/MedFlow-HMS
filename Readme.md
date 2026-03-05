@@ -16,8 +16,6 @@ A modern, full-stack **Hospital Management System (HMS)** built with **Flask** (
 - [API Reference](#api-reference)
 - [Background Tasks (Celery)](#background-tasks-celery)
 - [Deployment](#deployment)
-- [Contributing](#contributing)
-
 ---
 
 ## Features
